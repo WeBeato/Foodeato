@@ -1,7 +1,14 @@
-import './Home.css'
+import { useFetch } from "../../hooks/useFetch";
+import "./Home.css";
 
 export default function Home() {
+  const { data, isLoading, error } = useFetch("http://localhost:3000/recipes");
+
   return (
-    <div>Home</div>
-  )
+    <div className="home">
+      {error && <p className="error">{error}</p>}
+      {isLoading && <p className="loading">Loading...</p>}
+      {data && data.map((recipe) => <h2 key={recipe.id}>{recipe.title}</h2>)}
+    </div>
+  );
 }
