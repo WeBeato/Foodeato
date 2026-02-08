@@ -38,13 +38,6 @@
       "ingredients": ["eggs", "tomato", "mushrooms", "butter"],
       "method": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, cumque? Rerum architecto temporibus ducimus quibusdam et sapiente unde dolorem ex, mollitia, quisquam iusto, non minus praesentium nihil accusamus assumenda cupiditate!",
       "cookingTime": "10 minutes"
-    },
-    {
-      "id": "f3c4",
-      "title": "Recipe Title",
-      "ingredients": ["Recipe Ingredients"],
-      "method": "Recipe Method",
-      "cookingTime": "47 minutes"
     }
   ]
 }

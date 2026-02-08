@@ -1,5 +1,5 @@
-import { useState } from "react";
 import "./Searchbar.css";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Searchbar() {
@@ -8,6 +8,7 @@ export default function Searchbar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     navigate(`/search?q=${term}`);
   };
 
