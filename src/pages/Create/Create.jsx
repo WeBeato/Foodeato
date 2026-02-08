@@ -1,16 +1,28 @@
+import { useFetch } from "../../hooks/useFetch";
 import { useState } from "react";
 import "./Create.css";
 
 export default function Create() {
   const [title, setTitle] = useState("");
-  const [metode, setMetode] = useState("");
+  const [method, setMethod] = useState("");
   const [cookingTime, setCookingTime] = useState("");
   const [newIngredient, setNewIngredient] = useState("");
   const [ingredients, setIngredients] = useState([]);
 
+  const { postData, data, error } = useFetch(
+    "http://localhost:3000/recipes",
+    "POST",
+  );
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(title, metode, cookingTime, ingredients);
+
+    postData({
+      title,
+      ingredients,
+      method,
+      cookingTime: cookingTime + " minutes",
+    });
   };
 
   const handleAdd = (e) => {
@@ -64,9 +76,9 @@ export default function Create() {
           <span>Recipe Method:</span>
           <textarea
             onChange={(e) => {
-              setMetode(e.target.value);
+              setMethod(e.target.value);
             }}
-            value={metode}
+            value={method}
             required
           />
         </label>
