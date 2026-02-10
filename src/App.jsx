@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import ThemeSelector from "./components/ThemeSelector";
 
 import Navbar from "./components/Navbar";
 import Create from "./pages/Create/Create";
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar />
+        <ThemeSelector />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/create" element={<Create />} />
